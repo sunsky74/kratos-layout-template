@@ -4,7 +4,7 @@ Kratos Layout Template 是一个通过 Cookiecutter 生成的 Kratos 微服务�
   协议服务、Nacos 配置中心与服务注册、Knife4g API 文档、Zap + Lumberjack 日志、可扩展的中间件及指标
   组件。本 README 覆盖了模板使用方式、项目目录说明、配置方法与常见开发流程。
 
-  > 如果你仍在模板仓库中，请先执行 `cookiecutter template/` 生成真正的服务项目，再按下文说明进行
+  > 如果你仍在模板仓库中，请先根据 `使用方式二` 生成真正的服务项目，再按下文说明进行
   开发。
 
   ## 目录
