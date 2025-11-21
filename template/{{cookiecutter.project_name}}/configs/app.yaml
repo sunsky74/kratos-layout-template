@@ -1,0 +1,28 @@
+global:
+  appName: {{cookiecutter.project_name}}
+  env: test
+  version: v1
+  id: 127.0.0.1
+nacos:
+  enable: true
+  ip: {{cookiecutter.nacos_addr}}
+  port: 8848
+  discovery:
+    serviceName: {{cookiecutter.project_name}}
+    groupName: DEFAULT_GROUP
+    clusterName: {{cookiecutter.project_name}}
+  config:
+    namespace: demo
+    timeout: 3000
+log:
+  level: "info"
+  format: "json"
+  filename: "./logs"
+  maxSize: 1
+  maxBackups: 3
+  maxAge: 7
+  compress: true
+
+server:
+  http:
+    enableDoc: true
