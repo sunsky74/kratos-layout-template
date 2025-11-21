@@ -13,13 +13,6 @@ Kratos Layout Template 是一个通过 Cookiecutter 生成的 Kratos 微服务�
   2. [环境要求](#环境要求)
   3. [模板使用方式](#模板使用方式)
   4. [项目目录说明](#项目目录说明)
-  5. [配置说明](#配置说明)
-  6. [常用命令（Makefile）](#常用命令makefile)
-  7. [API、Proto 与文档](#apiproto-与文档)
-  8. [运行、调试与测试](#运行调试与测试)
-  9. [Docker 部署](#docker-部署)
-  10. [扩展指南](#扩展指南)
-  11. [故障排查](#故障排查)
 
   ## 特性概览
 
@@ -37,7 +30,7 @@ Kratos Layout Template 是一个通过 Cookiecutter 生成的 Kratos 微服务�
 
 | 组件 | 说明 |
 | --- | --- |
-| Go | 1.21+（模板当前 `go.mod` 写为 1.24.10，建议使用最新版 Go 发行版） |
+| Go | 1.24+（模板当前 `go.mod` 写为 1.24.10，建议使用最新版 Go 发行版） |
 | Cookiecutter | `pip install cookiecutter` or `brew install cookiecutter` |
 | Protocol Buffers | `protoc` 3.21+ |
 | Kratos CLI | `go install github.com/go-kratos/kratos/cmd/kratos/v2@latest` |
@@ -60,14 +53,37 @@ Kratos Layout Template 是一个通过 Cookiecutter 生成的 Kratos 微服务�
   go install github.com/google/gnostic/cmd/protoc-gen-openapi@latest
   go install github.com/google/wire/cmd/wire@latest
 
-  ## 模板使用方式
-
-  1. 获取模板代码并进入仓库根目录。
-  2. 执行 Cookiecutter（本地模板用 template/ 目录）：
-     cookiecutter ./template --no-input project_name="example_project"
-      - project_name：服务名（用于模块名、二进制名、Nacos serviceName 等）
 
 
+
+
+
+  ```
+
+### 模版使用方式
+
+#### 使用方式一
+
+```bash
+#获取模板代码并进入仓库根目录。
+mkdir template && cd template
+git clone https://github.com/sunsky74/kratos-layout-template.git
+cd ../ && cookiecutter ./template --no-input project_name="example_project"
+```
+
+#### 使用方式二
+
+```bash
+cookiecutter https://github.com/sunsky74/kratos-layout-template.git --no-input project_name="example_project"
+```
+
+
+
+
+
+### 项目整体说明
+
+```bash
   ## 项目目录说明
 
   | 路径 | 说明 |
@@ -93,3 +109,5 @@ Kratos Layout Template 是一个通过 Cookiecutter 生成的 Kratos 微服务�
   | Makefile | 常用命令集合 |
   | Dockerfile | 多阶段容器构建示例 |
   | main.go | 启动 cmd/{{cookiecutter.project_name}}.NewApp() |
+```
+
