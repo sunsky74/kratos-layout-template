@@ -61,6 +61,7 @@ def init_wire():
         w = Popen(command, cwd=os.path.join(PROJECT_DIRECTORY,'cmd',app_name))
         w.wait()
 
+init_dir()
 init_protoc()
 init_config()
 init_wire()
